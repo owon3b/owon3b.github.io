@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+  <head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="生活都不容易，
+人人都需努力。">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>QWB2019 | owon3b</title>
+<link href="https://owon3b.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://owon3b.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://owon3b.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://owon3b.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async type="text/javascript" src="https://owon3b.github.io//media/scripts/search.js"></script>
+<script type="text/javascript">
+$(document).pjax('a[target!=_blank]', '#pjax-container', {
+	fragment: '#pjax-container',
+	timeout: 5000,
+	cache: false
+});
+$(document).on('pjax:complete', function(){  	
+	pjax();
+});
+
+$(window).on('popstate.pjax', function () {
+	pjax();
+})
+
+function pjax() {
+	$.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+
+	if (("#gitalk-container").length > 0 ) {
+	$('#mememe').attr('src','//source.unsplash.com/800x400/?arts,weather?'+Math.random());
+	$.getScript("//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js");
+	$.getScript("//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js");
+	}
+}
+</script>
+
+  </head>
+
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" style="display:inline-block;" src="https://owon3b.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="owon3b" class="weaklink"><a  href="/">owon3b</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+<div class="search">
+    <i class="search-icon fa fa-search search-start"></i>
+    <input type="text" class="search-input" placeholder="Searching..." />
+    <i class="search-icon fa fa-refresh search-clear"></i>
+	<div class="search-results"></div>
+</div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+
+
+<div class="content">
+
+
+
+
+
+
+  <div class="post_page" >
+
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>QWB2019</a>
+
+
+
+    </h2>
+  </div>
+  
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2019-08-09</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://owon3b.github.io/tag/XXAH9zlC1" class="tag">强网杯2019</a>
+
+	<a href="https://owon3b.github.io/tag/poihf0c8c" class="tag">Reverse</a>
+
+
+</span>
+<span>9 min read</span>
+&nbsp
+&nbsp
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://owon3b.github.io/post/qwb2019"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://owon3b.github.io/post/qwb2019&sharesource=qzone&title=QWB2019&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;p&gt;全国强网杯部分逆向题目writeup，包括JustRe、webassembly、设备固件。&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://owon3b.github.io/post/qwb2019&sharesource=weibo&title=QWB2019 + " - " + &lt;p&gt;全国强网杯部分逆向题目writeup，包括JustRe、webassembly、设备固件。&lt;/p&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+&nbsp
+&nbsp
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+&nbsp
+&nbsp
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</div>
+  </div>
+
+  <div class="post_content markdown">
+  &nbsp
+  <img id="mememe" src="//source.unsplash.com/800x400/?arts,weather">
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><p>全国强网杯部分逆向题目writeup，包括JustRe、webassembly、设备固件。</p>
+<!-- more -->
+<h2 id="justre">JustRe</h2>
+<p>😃</p>
+<h3 id="32位windows程序">32位Windows程序：</h3>
+<pre><code class="language-bash">$file JustRe.exe                                                                  
+JustRe.exe: PE32 executable (console) Intel 80386, for MS Windows
+</code></pre>
+<h3 id="程序主要逻辑">程序主要逻辑：</h3>
+<p>输入为26个字符，过两个check即可得到flag<br>
+<img src="https://owon3b.github.io//post-images/1569494206318.png" alt="" loading="lazy"></p>
+<h3 id="check1">check1：</h3>
+<p>对前<code>8</code>个字符转成4字节16进制：<br>
+<img src="https://owon3b.github.io//post-images/1569494756738.png" alt="" loading="lazy"><br>
+对第<code>9</code>、<code>10</code>个字符转成1字节十六进制：<br>
+<img src="https://owon3b.github.io//post-images/1569494805720.png" alt="" loading="lazy"><br>
+利用转换后的两个数对一数组进行操作，要求操作完的结果与固定值(loc_404148)的值相等：<br>
+数组如下：<br>
+<img src="https://owon3b.github.io//post-images/1569494822097.png" alt="" loading="lazy"><br>
+操作如下：<br>
+<img src="https://owon3b.github.io//post-images/1569494848564.png" alt="" loading="lazy"><br>
+可知17~24个dword的值操作时会用上输入的前10个字符，提取xmmword_405018和loc_404148的值后，直接用z3即可跑出前10个字符的结果，脚本如下：</p>
+<pre><code class="language-python">from z3 import *
+
+s = Solver()
+globals()['v3']=BitVec('v3',64)
+globals()['v11']=BitVec('v11',64)
+
+a = [0x83ec8b55,0xec81f0e4,0x278,0x405004a1,0x89c43300,0x2742484,0x100f0000,0x4041a805,0x41c0a000,0xf560040,0x2c244411,0x7e0ff357,0x4041b805,0xd60f6600,0xf402444,0x6a0a4110,0x24448840,0x24848d4c,0x1fc,0xf50006a,0x1c244411,0xf58e8,0x8d406a00,0x2482484]
+b = [0x78B09135,0xE78DBAE5,0xFB0C084A,0x3B5C0EA2,0x82C7F904,0xF937EE81,0xEB130A06,0x3B4D7202,0x3ACC6A08,0x45A0A49,0x26E84E1B,0x5513B95C,0x3B4D8209,0xAD132C0D,0x44BEE4A,0x61164B1,0x1F489250,0x1F88974D,0xFB0C0BBE,0x45C0A29,0xF6E84E25,0xFB1362AD,0x864C3016,0xF953EE93,]
+
+s.add(v11 &lt; 256)
+s.add(v11 &gt;= 0)
+s.add(v3 &lt; 0xffffffff)
+
+for x in range(16,24):
+    # print(x, end = ' ')
+    s.add(((b[x] + v11 * 0x1010101) &amp; 0xffffffff) ^ (x + v3) == a[x])
+# print('')
+if (s.check() == sat):
+    print('success')
+    obj = globals()['v3']
+    a = s.model()[obj].as_long()
+    print(hex(a))
+    obj = globals()['v11']
+    b = s.model()[obj].as_long()
+    print(hex(b))
+else:
+    print('fail')
+</code></pre>
+<p>可得出前10个字符：<br>
+<img src="https://owon3b.github.io//post-images/1569494885109.png" alt="" loading="lazy"></p>
+<h3 id="check2">check2</h3>
+<p>对后16个字符补齐24个字节，对每8个字节进行3DES加密，三个密钥分别为：<br>
+<code>AFSAFCED</code>、<code>YCXCXACN</code>、<code>DFKDCQXC</code><br>
+加密结果与3个定值比较：<br>
+<img src="https://owon3b.github.io//post-images/1569494907949.png" alt="" loading="lazy"><br>
+只比较前2个结果，进行3DES解密即可得到输入的后16个字符，脚本如下：</p>
+<pre><code class="language-python">from pyDes import *
+
+c = b'\xFA\xCE\x09\x87\xE6\xA9\x7C\x50'[::-1] + b'\x6C\x97\xBB\x90\xCF\x0D\xD5\x20'[::-1]
+key = 'AFSAFCEDYCXCXACNDFKDCQXC'
+des_cde3 = triple_des(key)
+m = des_cde3.decrypt(c)
+print('flag{1324221818%s}' % m.decode())
+# flag{13242218180dcc509a6f75849b}
+</code></pre>
+<p>即可得flag：<br>
+<code>flag{13242218180dcc509a6f75849b}</code></p>
+<h3 id="本题后记">本题后记</h3>
+<p>计算前10个字符时，可直接提取前两个dword进行爆破即可得到前10位，<br>
+后16位可用Crypto.Cipher 中的 DES3解密。</p>
+<hr>
+<h2 id="webassembly">Webassembly</h2>
+<p>😃</p>
+<h3 id="题目给出三个文件">题目给出三个文件</h3>
+<p><code>webassembly.html</code>、<code>webassembly.wasm</code>、<code>webassembly.js</code><br>
+主程序为<code>webassembly.wasm</code>，因此应该对该程序进行分析。</p>
+<h3 id="先将wasm转成c文件">先将.wasm转成.c文件</h3>
+<p>利用<a href="https://github.com/WebAssembly/wabt">wabt</a>的<code>wasm2c</code>，命令如下：</p>
+<pre><code class="language-bash">$wasm2c webassembly.wasm -o webassembly.c
+</code></pre>
+<h3 id="再编译为目标文件o">再编译为目标文件.o</h3>
+<p>需要wabt中wasm2c目录下的三个.c/.h文件复制到源代码下，然后便可以使用下面命令编译成目标文件</p>
+<pre><code class="language-bash">$gcc -c webassembly.c -o webassembly.o
+</code></pre>
+<h3 id="用ida进行静态分析">用IDA进行静态分析</h3>
+<p><img src="https://owon3b.github.io//post-images/1569495263745.png" alt="" loading="lazy"><br>
+主要为<code>check</code>函数(f54)和<code>encrypt</code>函数(f15)<br>
+其中check函数作用主要为获取flag输入。</p>
+<h4 id="也可以使用chrome浏览器对wasm进行动态调试">也可以使用chrome浏览器对wasm进行动态调试</h4>
+<p>利用python开启http服务，然后访问对应服务即可进行调试</p>
+<pre><code class="language-bash">$sudo python3 -m http.server 80
+</code></pre>
+<h3 id="encrypt函数">encrypt函数</h3>
+<p>对输入的flag每8字节进行<code>xtea</code>加密，共<code>4</code>次<code>32</code>字节，剩余6字节不加密。<br>
+密钥在一开始即给出，为16个'\x00'：<br>
+<img src="https://owon3b.github.io//post-images/1569495314084.png" alt="" loading="lazy"><br>
+每次加密如下：<br>
+<img src="https://owon3b.github.io//post-images/1569495324488.png" alt="" loading="lazy"><br>
+最后对每字节进行比较：<br>
+<img src="https://owon3b.github.io//post-images/1569495347412.png" alt="" loading="lazy"><br>
+故可以直接导出结果进行解密即可，后6字节为明文<code>741d8}</code>：<br>
+解密脚本如下：</p>
+<pre><code class="language-python">from struct import *
+from xtea3 import *
+
+key = b'\x00' * 16
+x = new(key,endian=&quot;&lt;&quot;)
+cipher = bytes(bytearray([0xc1,0x57,0x75,0x61,0x74,0xd4,0x2d,0x13,0x62,0x00,0xe2,0x8a,0x50,0x0e,0xcb,0xed,0x41,0x20,0x20,0x6f,0xd0,0x26,0xfc,0xbe,0x98,0xab,0x67,0x77,0x39,0x71,0x2d,0x09,])) 
+s = b''
+for i in range(0, len(cipher), 8):
+    plain = x.decrypt(cipher[i:i+8])
+    s += plain
+s += b'741d8}'
+print(s.decode())
+# flag{7bfbc7c32297858eba7ede17185741d8}
+</code></pre>
+<hr>
+<h2 id="设备固件">设备固件</h2>
+<p>😃</p>
+<h3 id="程序描述">程序描述</h3>
+<p>题目给出<code>openwrt-malta-le-root.ext4</code>、<code>openwrt-malta-le-vmlinux.elf</code>、<code>readme.txt</code><br>
+其中readme.txt内容如下：</p>
+<pre><code>题目运行命令如下:
+sudo qemu-system-mipsel -M malta -hda openwrt-malta-le-root.ext4 -kernel openwrt-malta-le-vmlinux.elf -nographic -append &quot;root=/dev/sda console=tty50&quot; 
+
+需要分析的程序为 ./bin/hello
+</code></pre>
+<p>可知需要分析的程序为hello且属于mipsel架构，故需要挂载ext4然后导出<code>hello</code>进行分析。</p>
+<h3 id="导出hello进行分析">导出hello进行分析</h3>
+<p>vm题。分析程序，分析见<code>an.py</code>：</p>
+<pre><code class="language-txt">v1 = opcode[6*v4+1]
+v5 = opcode[6*v4+2]+(opcode[6*v4+3]&lt;&lt;8)
+v2 = opcode[6*v4+4]+(opcode[6*v4+5]&lt;&lt;8)
+
+                                    v4
+0x08,0x00,0x00,0x00,0x20,0x00,      0       stack[0]=0x20
+0x08,0x00,0x01,0x00,0x00,0x00,      1       stack[4]=0x00
+0x08,0x00,0x02,0x00,0x01,0x00,      2       stack[8]=0x01
+
+0x03,0x00,0x01,0x00,0x00,0x00,      3       stack[0] == stack[4] ? mem[1]=1 : mem[1]=2 
+0x04,0x01,0x16,0x00,0x00,0x00,      4       mem[1]=2,v1=1  (stack[0] == stack[4]) v4=v4+0x16=26
+
+0x08,0x00,0x0B,0x00,0x00,0x00,      5       stack[44]=0
+0x08,0x00,0x0C,0x00,0x00,0x00,      6       stack[48]=0
+0x01,0x00,0x0C,0x00,0x0B,0x00,      7       stack[48]=stack[44]+stack[48]
+0x03,0x00,0x0B,0x00,0x01,0x00,      8       stack[44] == stack[4] ? mem[1]=1 : mem[1]=2
+
+0x01,0x00,0x0B,0x00,0x02,0x00,      9       stack[44]=stack[44]+stack[8]
+0x04,0x02,0xFC,0xFF,0x00,0x00,      10      mem[1]=1 v1=2  (stack[44] != stack[4]) v4=v4+0xfffc--&gt;v4=7
+
+0x08,0x00,0x03,0x00,0x08,0x00,      11      stack[12]=0x08
+0x08,0x00,0x04,0x00,0x06,0x00,      12      stack[16]=0x06
+0x08,0x00,0x09,0x00,0x10,0x00,      13      stack[36]=0x10=16
+0x0F,0x00,0x09,0x00,0x03,0x00,      14      stack[36]=stack[36] &lt;&lt; (stack[12] &amp; 0x1f)
+0x08,0x00,0x0A,0x00,0x24,0x00,      15      stack[40]=0x24
+0x01,0x00,0x09,0x00,0x0A,0x00,      16      stack[36]=stack[36]+stack[40]
+
+                                            --&gt; stack[36]=0x1024
+0x01,0x00,0x09,0x00,0x0C,0x00,      17      stack[36]=stack[36]+stack[48]
+0x0A,0x00,0x05,0x00,0x01,0x00,      18      stack[20]=mem[2*stack[4]+16] --&gt; pass[stack[4]]
+0x0D,0x00,0x05,0x00,0x09,0x00,      19      stack[20]=stack[20]*stack[36]
+
+0x05,0x00,0x06,0x00,0x05,0x00,      20      stack[24]=stack[20]
+0x10,0x00,0x06,0x00,0x04,0x00,      21      stack[24]=stack[24] &gt;&gt; (stack[16] &amp; 0x1f)
+
+                                            --&gt; stack[24]=stack[20]&gt;&gt;6
+0x0B,0x00,0x07,0x00,0x01,0x00,      22      stack[28]=mem[stack[4]+24] --&gt; enc[stack[4]]
+0x03,0x00,0x06,0x00,0x07,0x00,      23      stack[24] == stack[28] ? mem[1]=1 : mem[1]=2
+0x01,0x00,0x01,0x00,0x02,0x00,      24      stack[4]=stack[4]+stack[8]
+0x04,0x01,0xE9,0xFF,0x00,0x00,      25      mem[1]=1 v1=1 (stack[24]==stack[28] --&gt; mem[1]=1) 
+                                                                {v4 = v4 + 0xffe9 = 0x10003 --&gt; 0x3}
+                                            else --&gt; mem[1]=2
+0x04,0x02,0x01,0x00,0x00,0x00,      26      {mem[1]=2 v1=2 v4=v4+0x01=28 --&gt; out}
+0xFF,0x00,0x00,0x00,0x00,0x00,      27      mem[1]=2 v1=0 print(sucess)
+0x09,0x00,0x00,0x00,0x00,0x00,      28
+0xFF,0x00,0x00,0x00,0x00,0x00,
+0x00,0x00,0x00,0x00,0x00,0x00,
+0x00,0x00,0x00,0x00,0x00,0x00,
+
+i=0
+while(1)
+    if(i == 32)
+        print(&quot;success&quot;)
+    else:
+        s44=s48=0
+        s48+=s44
+        while(s44!=i):
+            s44+=1
+            s48+=s44
+        s36=0x1024
+        s36+=s48
+        s20=pass[i]
+        s20*=s36
+        s24=s20&gt;&gt;6
+        s28=enc[i]
+        i+=1
+        if(s28==s24):
+            continue
+        else:
+            print(&quot;out&quot;)
+--&gt;
+</code></pre>
+<p>最后得到主要逻辑如下：</p>
+<pre><code class="language-python">'''
+i=0
+while(1)
+    if(i == 32)
+        print(&quot;success&quot;)
+    else:
+        s44=s48=0
+        s48+=s44
+        while(s44!=i):
+            s44+=1
+            s48+=s44
+        s36=0x1024
+        s36+=s48
+        s20=pwd[i]
+        s20*=s36
+        s24=s20&gt;&gt;6
+        s28=enc[i]
+        i+=1
+        if(s28==s24):
+            continue
+        else:
+            print(&quot;out&quot;)
+--&gt;
+
+for i in range(32):
+    j = 0
+    s44=0
+    while(s44!=i):
+        s44+=1
+        j+=s44
+    i++
+    if (pwd[i]*(0x1024+j)) &gt;&gt; 6 == enc[i]:
+        continue
+    else :
+        print(&quot;out&quot;)
+        
+'''
+
+user_name = &quot;c60d0&quot; # 分析程序可得到
+enc=[0x00000C5B,0x00000CDD,0x00000D1F,0x000018C0,0x000018C6,0x00000C26,0x00000E72,0x00000DF7,0x000019B1,0x00000D41,0x00000D08,0x0000191C,0x00000CD9,0x00000EB1,0x00000CEE,0x00001A78,0x00000D8B,0x00000D99,0x00000D64,0x00000CED,0x000019F8,0x00000E61,0x00001A7F,0x00001AE7,0x00000F26,0x00001B34,0x00001AD0,0x00000D7C,0x00000FC9,0x00000E7E,0x00001C0E,0x00001BAE]
+password=&quot;&quot;
+for i in range(32):
+    j = 0               #
+    k=0                 #
+    while(k!=i):        #   j+=i
+        k+=1            #    
+        j+=k            #
+    for p in range(32,127):
+        if (p*(0x1024+j))&gt;&gt;6 == enc[i]:
+            password+=chr(p)
+            break
+print(password)
+print(&quot;flag:\nflag{%s%s}&quot; %(user_name, password))
+# flag{c60d0134bb097e43b292f4431b6cd8db194db}  
+</code></pre>
+<h2 id="后记">后记</h2>
+<p>这次逆向题目包括一般逆向题目，也还有webassembly类和vm类的题目。由于较少接触webassembly类以及vm类题目，四处碰壁。因此还要更有耐心，方能解出题目。</p>
+</span></p></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">owon3b</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2019-08-09</div>    
+	 <p class="md_block">
+
+</p> 
+</div>
+</div>
+
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
+
+<script>
+var link = "" ;
+$("img").each( (i,o) => {
+	var o = $(o);
+	if( o.attr("src").indexOf("sinaimg") > 0 || o.attr("src").indexOf("qpic") > 0 || o.attr("src").indexOf("baidu") > 0 || o.attr("src").indexOf("sinaimg") > 0){
+		o.attr("referrerpolicy","no-referrer");
+		link = o.attr("src");
+		o.attr("src",link);
+	}
+});
+</script>
+
+<div style="width:100%;overflow:hidden">
+
+          <div style="float:right;text-align:right;color:#ccc;font-size:18px;width:50%;">
+            下一篇
+            <a href="https://owon3b.github.io/post/tctf-elements">
+              <h3 class="post-title">
+                TCTF Elements
+              </h3>
+            </a>
+          </div>
+
+
+
+</div>
+
+<div class="doc_comments">
+
+          
+			<div id="gitalk-container"></div>
+            <link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet">
+<script>
+  var gitalk = new Gitalk({
+    clientID: '12fe1da5073630aeb3c6',
+    clientSecret: 'c0b469e796e677ff07d80920848debd748928098',
+    repo: 'owon3b.github.io',
+    owner: 'owon3b',
+    admin: ['owon3b'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+
+
+          
+			  
+          
+        
+</div>
+
+  </div>
+</div>
+
+
+      </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#justre">JustRe</a>
+<ul>
+<li><a href="#32%E4%BD%8Dwindows%E7%A8%8B%E5%BA%8F">32位Windows程序：</a></li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E4%B8%BB%E8%A6%81%E9%80%BB%E8%BE%91">程序主要逻辑：</a></li>
+<li><a href="#check1">check1：</a></li>
+<li><a href="#check2">check2</a></li>
+<li><a href="#%E6%9C%AC%E9%A2%98%E5%90%8E%E8%AE%B0">本题后记</a></li>
+</ul>
+</li>
+<li><a href="#webassembly">Webassembly</a>
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE%E7%BB%99%E5%87%BA%E4%B8%89%E4%B8%AA%E6%96%87%E4%BB%B6">题目给出三个文件</a></li>
+<li><a href="#%E5%85%88%E5%B0%86wasm%E8%BD%AC%E6%88%90c%E6%96%87%E4%BB%B6">先将.wasm转成.c文件</a></li>
+<li><a href="#%E5%86%8D%E7%BC%96%E8%AF%91%E4%B8%BA%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6o">再编译为目标文件.o</a></li>
+<li><a href="#%E7%94%A8ida%E8%BF%9B%E8%A1%8C%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90">用IDA进行静态分析</a>
+<ul>
+<li><a href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9wasm%E8%BF%9B%E8%A1%8C%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95">也可以使用chrome浏览器对wasm进行动态调试</a></li>
+</ul>
+</li>
+<li><a href="#encrypt%E5%87%BD%E6%95%B0">encrypt函数</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E5%A4%87%E5%9B%BA%E4%BB%B6">设备固件</a>
+<ul>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E6%8F%8F%E8%BF%B0">程序描述</a></li>
+<li><a href="#%E5%AF%BC%E5%87%BAhello%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90">导出hello进行分析</a></li>
+</ul>
+</li>
+<li><a href="#%E5%90%8E%E8%AE%B0">后记</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+    </div>
+	
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+<a href="https://github.com/owon3b" title="github"><i class="fa fa-github"></i></a>
+
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.getElementById("copyright").innerHTML = "Copyright © "+year+“ ” + owon3b;
+		</script>
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("9/25/2019");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+	  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+      </div>
+
+    </div>
+
+<script type="text/javascript" src="https://owon3b.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://owon3b.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+</script>
+
+</body>
+
+</html>
