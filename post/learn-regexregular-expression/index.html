@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+        <meta charset="utf-8">
+        <title>Learn Regex(Regular Expression) | owon3b</title>
+        <link rel="stylesheet" href="https://owon3b.github.io//styles/main.css">
+        <link rel="stylesheet" href="https://at.alicdn.com/t/font_1306644_jwtuc2zzbrd.css">
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+         <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+         <script >hljs.initHighlightingOnLoad();</script>
+
+    </head>
+    <body>
+              <header class="header mdui-m-b-5">      
+            <div class="container  ">
+                <div class="index-title animated fadeInDown mdui-text-center mdui-text-color-white mdui-m-b-2" style="animation-delay: 0.2s"><a href="https://owon3b.github.io/">owon3b</a></div>
+                <div class="mdui-text-color-white animated fadeInDown mdui-text-center  mdui-m-b-3" style="animation-delay: 0.4s">生活都不容易，
+人人都需努力。</div>
+           
+            <nav id="nav" class="mdui-text-center animated fadeInDown" style="animation-delay: 0.6s">
+                   
+                            <li><a href="/">首页</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
+                    
+                            <li><a href="/archives">归档</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
+                    
+                            <li><a href="/tags">标签</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
+                    
+                            <li><a href="/post/about">关于</a>
+                                <span class="nav-style top"></span>
+                                <span class="nav-style bottom"></span>
+                                <span class="nav-style left"></span>
+                                <span class="nav-style right"></span>
+                                </li>
+                    
+                  </nav>
+                </div>
+        </header>
+        <div class="mdui-container ">
+                <div class="mdui-row">
+                        <div class="mdui-col-md-8 mdui-col-offset-md-2 ">
+                                <article class="mdui-p-a-2 post animated fadeIn" style="animation-delay: 0.8s;animation-duration: 2s">
+                                    <div class="post-title  mdui-m-b-1">Learn Regex(Regular Expression)</div>
+                                    <div class="mdui-typo-body-2 mdui-m-b-2" datetime="2020-02-06 13:52:11">2020-02-06 / 11 min read</div>
+                                    <div class="mdui-m-b-2 mdui-typo post-neirong"><p>owon3b的正则表达式学习记录。</p>
+<blockquote>
+<p>Regex(正则表达式)：使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。<br>
+Material: <a href="https://github.com/ziishaned/learn-regex">https://github.com/ziishaned/learn-regex</a><br>
+Practice: <a href="https://regex101.com/">https://regex101.com/</a></p>
+</blockquote>
+<!-- more -->   
+<p><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#0x00%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">0x00：什么是正则表达式？</a></li>
+<li><a href="#0x01-%E5%9F%BA%E6%9C%AC%E5%8C%B9%E9%85%8Dbasic-matchers">0x01 基本匹配(Basic Matchers)</a></li>
+<li><a href="#0x02-%E5%85%83%E5%AD%97%E7%AC%A6meta-matchers">0x02 元字符(Meta Matchers)</a>
+<ul>
+<li><a href="#0x02-1-%E7%82%B9%E8%BF%90%E7%AE%97-the-full-stop">0x02-1 点运算 <code>.</code>(The Full Stop)</a></li>
+<li><a href="#0x02-2-%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E5%90%A6%E5%AE%9A%E5%AD%97%E7%AC%A6%E9%9B%86character-sets-and-negated-character-sets">0x02-2 字符集与否定字符集(Character Sets and Negated Character Sets)</a></li>
+<li><a href="#0x02-3-%E9%87%8D%E5%A4%8D%E6%AC%A1%E6%95%B0repetitions">0x02-3 重复次数(Repetitions)</a>
+<ul>
+<li><a href="#0x02-31-%E5%8F%B7the-plus">0x02-3.1 <code>+</code> 号(The Plus)</a></li>
+<li><a href="#0x02-32-%E5%8F%B7the-star">0x02-3.2 <code>*</code> 号(The Star)</a></li>
+<li><a href="#0x02-33-%E5%8F%B7the-question-mark">0x02-3.3 <code>?</code> 号(The Question Mark)</a></li>
+</ul>
+</li>
+<li><a href="#0x02-4-%E5%8F%B7braces">0x02-4 <code>{}</code> 号(Braces)</a></li>
+<li><a href="#0x02-5-%E7%89%B9%E5%BE%81%E6%A0%87%E7%BE%A4-%E5%92%8C-%E6%88%96%E8%BF%90%E7%AE%97%E7%AC%A6capturing-groups-and-alternation">0x02-5 <code>(...)</code> 特征标群 和 <code>|</code>或运算符(Capturing Groups and Alternation)</a></li>
+<li><a href="#0x02-6-%E8%BD%AC%E4%B9%89%E7%AC%A6-%E8%BD%AC%E7%A0%81%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6escaping-special-characters">0x02-6 转义符 <code>\</code> 转码特殊字符(Escaping Special Characters)</a></li>
+<li><a href="#0x02-7-%E9%94%9A%E7%82%B9anchors">0x02-7 锚点(Anchors)</a></li>
+</ul>
+</li>
+<li><a href="#0x03-%E7%AE%80%E5%86%99%E5%AD%97%E7%AC%A6%E9%9B%86shorthand-character-sets">0x03 简写字符集(Shorthand Character Sets)</a></li>
+<li><a href="#0x04-%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80%E5%92%8C%E5%90%8E%E5%8F%91%E6%96%AD%E8%A8%80%E5%89%8D%E5%90%8E%E9%A2%84%E6%9F%A5lookarounds">0x04 先行断言和后发断言（前后预查Lookarounds）</a>
+<ul>
+<li><a href="#0x04-1-%E6%AD%A3%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80positive-lookahead">0x04-1 正先行断言(Positive Lookahead)</a></li>
+<li><a href="#0x04-2-%E8%B4%9F%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80negative-lookahead">0x04-2 负先行断言(Negative Lookahead)</a></li>
+<li><a href="#0x04-3-%E6%AD%A3%E5%90%8E%E5%8F%91%E6%96%AD%E8%A8%80positive-lookbehind">0x04-3 正后发断言(Positive Lookbehind)</a></li>
+<li><a href="#0x04-4-%E8%B4%9F%E5%90%8E%E5%8F%91%E6%96%AD%E8%A8%80negative-lookbehind">0x04-4 负后发断言(Negative Lookbehind)</a></li>
+</ul>
+</li>
+<li><a href="#0x05-%E6%A0%87%E5%BF%97flags">0x05 标志(Flags)</a>
+<ul>
+<li><a href="#0x05-1-%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99case-insensitive">0x05-1 忽略大小写(Case Insensitive)</a></li>
+<li><a href="#0x05-2-%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2global-search">0x05-2 全局搜索(Global Search)</a></li>
+<li><a href="#0x05-3-%E5%A4%9A%E8%A1%8C%E4%BF%AE%E9%A5%B0%E7%AC%A6multiline">0x05-3 多行修饰符(Multiline)</a></li>
+</ul>
+</li>
+<li><a href="#0x06-%E8%B4%AA%E5%A9%AA%E5%8C%B9%E9%85%8D%E4%B8%8E%E6%83%B0%E6%80%A7%E5%8C%B9%E9%85%8Dgreedy-vs-lazy-matching">0x06 贪婪匹配与惰性匹配(Greedy vs Lazy Matching)</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul>
+</li>
+</ul>
+</p>
+<h2 id="0x00什么是正则表达式">0x00：什么是正则表达式？</h2>
+<blockquote>
+<p>使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。</p>
+</blockquote>
+<p>即可以从一个<strong>字符串</strong>根据一定的<strong>匹配模式</strong>来匹配文本中对应的字符、数字等组成的字符串。</p>
+<hr>
+<h2 id="0x01-基本匹配basic-matchers">0x01 基本匹配(Basic Matchers)</h2>
+<p>如一个正则表达式<code>fox</code>，结果为顺序匹配一个字符串<code>fox</code>。此外，正则表达式也是大小写敏感的。<br>
+<code>fox</code> -&gt; The quick brown <code>fox</code> jumps over the lazy dog.</p>
+<hr>
+<h2 id="0x02-元字符meta-matchers">0x02 元字符(Meta Matchers)</h2>
+<p>正则表达式主要依赖于元字符。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:left">句号匹配任意单个字符除了换行符。</td>
+</tr>
+<tr>
+<td style="text-align:center">[ ]</td>
+<td style="text-align:left">字符种类。匹配方括号内的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">[^ ]</td>
+<td style="text-align:left">否定的字符种类。匹配除了方括号里的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:left">匹配&gt;=0个重复的在*号之前的字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:left">匹配&gt;=1个重复的+号前的字符。</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:left">标记?之前的字符为可选.</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:left">匹配num个大括号之间的字符 (n &lt;= num &lt;= m).</td>
+</tr>
+<tr>
+<td style="text-align:center">(xyz)</td>
+<td style="text-align:left">字符集，匹配与 xyz 完全相等的字符串.</td>
+</tr>
+<tr>
+<td style="text-align:center">|</td>
+<td style="text-align:left">或运算符，匹配符号前或后的字符.</td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:left">转义字符,用于匹配一些保留的字符 <code>[ ] ( ) { } . * + ? ^ $ \</code></td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:left">从开始行开始匹配.</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:left">从末端开始匹配.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0x02-1-点运算-the-full-stop">0x02-1 点运算 <code>.</code>(The Full Stop)</h3>
+<p><code>.</code>匹配任意<strong>单个</strong>字符，但不匹配<strong>换行符</strong>。如：<code>.i.k</code> 匹配句子中的<code>uick</code>。<br>
+<code>.i.k</code>-&gt; The q<code>uick</code> brown fox jumps over the lazy dog.</p>
+<h3 id="0x02-2-字符集与否定字符集character-sets-and-negated-character-sets">0x02-2 字符集与否定字符集(Character Sets and Negated Character Sets)</h3>
+<p>方括号<code>[]</code>用来指定一个<strong>字符集</strong>。在方括号中使用连字符<code>-</code>来指定<strong>字符集的范围</strong>。此外，字符集<strong>不关心顺序</strong>。如：<code>[Tt]he</code> 匹配句子中的<code>The</code>和<code>the</code>。<br>
+<code>[Tt]he</code> -&gt; <code>The</code> quick brown fox jumps over <code>the</code> lazy dog</p>
+<p>一般情况下，<code>^</code>表示一个字符串的开头。但是当用在方括号的开头，表示一个否定字符集。即不包括该字符集中的字符。如：<code>[^fr ]o</code> 匹配句子中的 <code>do</code>。<br>
+<code>[^fr ]o</code> -&gt; The quick brown fox jumps over the lazy <code>do</code>g.</p>
+<h3 id="0x02-3-重复次数repetitions">0x02-3 重复次数(Repetitions)</h3>
+<p>后面跟着元字符 <code>+</code>，<code>*</code> 或者 <code>?</code> 的，用来指定匹配子模式的次数。</p>
+<h4 id="0x02-31-号the-plus">0x02-3.1 <code>+</code> 号(The Plus)</h4>
+<p><code>+</code> 号匹配<code>+</code> 号之前的<strong>字符</strong>出现<strong>至少1 次</strong>的字符。如：<br>
+<code>q.+x</code> -&gt; The <code>quick brown fox</code> jumps over the lazy dog.</p>
+<h4 id="0x02-32-号the-star">0x02-3.2 <code>*</code> 号(The Star)</h4>
+<p><code>*</code> 号匹配<code>*</code> 号之前的字符出现<strong>大于等于0次</strong>的字符串。如表达式<code>a*</code>匹配0或更多的以<code>a</code>开头的字符串。表达式<code>[a-z]*</code> 匹配一个行中所有以小写字母开头的字符串。<br>
+<code>[a-z]*</code> -&gt; T<code>he car parked in the garage</code>.<br>
+<code>*</code>字符和<code>.</code>字符搭配可以匹配<strong>所有</strong>的字符<code>.*</code>。<code>*</code>和表示匹配空格的符号<code>\s</code>连起来用，如表达式<code>\s*cat\s*</code>匹配<strong>0 或更多个空格开头</strong>和<strong>0或更多个空格结尾</strong>的<strong>cat字符串</strong>。<br>
+<code>\s*cat\s*</code> -&gt; The fat<code>cat</code>sat on the con<code>cat</code>enation.</p>
+<h4 id="0x02-33-号the-question-mark">0x02-3.3 <code>?</code> 号(The Question Mark)</h4>
+<p><code>?</code> 号匹配<code>?</code> 号前面的字符出现次数为<strong>0</strong>或<strong>1</strong>次。如：<br>
+<code>[T]?he</code> -&gt; <code>The</code> quick brown fox jumps over t<code>he</code> lazy dog.</p>
+<h3 id="0x02-4-号braces">0x02-4 <code>{}</code> 号(Braces)</h3>
+<p>在正则表达式中<code>{}</code> 是一个量词，表示匹配一个或一组字符可以<strong>重复出现的次数</strong>。如：<br>
+表达式 <code>[0-9]{2,3}</code> 匹配最少 2 位最多 3 位 0~9 的数字；<br>
+表达式 <code>[0-9]{2,}</code>最少 2 位0~9 的数字；<br>
+表达式 <code>[0-9]{3}</code>固定3 位0~9 的数字。<br>
+<code>[0-9]{2,4}</code> -&gt; The number was 9.<code>9997</code> but we rounded it off to <code>10</code>.0.</p>
+<h3 id="0x02-5-特征标群-和-或运算符capturing-groups-and-alternation">0x02-5 <code>(...)</code> 特征标群 和 <code>|</code>或运算符(Capturing Groups and Alternation)</h3>
+<p>特征标群是一组写在 <code>(...)</code> 中的子模式。表示整个标群内的字符重复 n 次。如：<br>
+表达式 <code>(ab)*</code> 匹配连续出现 0 或更多个 <code>ab</code>。<br>
+此外，还可以在<code>()</code>中使用<code>|</code>来表示<code>或</code>。<br>
+<code>(f|d)o.</code> -&gt; The quick brown <code>fox</code> jumps over the lazy <code>dog</code>.</p>
+<h3 id="0x02-6-转义符-转码特殊字符escaping-special-characters">0x02-6 转义符 <code>\</code> 转码特殊字符(Escaping Special Characters)</h3>
+<p>反斜线 <code>\</code> 在表达式中用于转码紧跟其后的字符。用于指定 <code>{ } [ ] / \ + * . $ ^ | ?</code> 这些特殊字符。<br>
+如：需要匹配<code>.</code>，则使用<code>\.</code><br>
+<code>\.</code> -&gt; The quick brown fox jumps over the lazy dog<code>.</code></p>
+<h3 id="0x02-7-锚点anchors">0x02-7 锚点(Anchors)</h3>
+<p>用于匹配指定<strong>开头</strong>或<strong>结尾</strong>的字符串，就需要使用锚点。<code>^</code> 指定开头，<code>$</code> 指定结尾。<br>
+如：<code>^(T|t)he</code> 匹配 <code>The</code>或<code>the</code>开头的字符串：<br>
+<code>^(T|t)he</code> -&gt; <code>The</code> quick brown fox jumps over the lazy dog.<br>
+<code>(g\.)$</code> 匹配 <code>g.</code>结尾的字符串：<br>
+<code>(g\.)$</code> -&gt; The quick brown fox jumps over the lazy do<code>g.</code></p>
+<hr>
+<h2 id="0x03-简写字符集shorthand-character-sets">0x03 简写字符集(Shorthand Character Sets)</h2>
+<p>正则表达式提供一些常用的字符集简写。如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">简写</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:left">除换行符(\n)外的所有字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:left">匹配所有字母数字，等同于 <code>[a-zA-Z0-9_]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\W</td>
+<td style="text-align:left">匹配所有非字母数字，即符号，等同于： <code>[^\w]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:left">匹配数字： <code>[0-9]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\D</td>
+<td style="text-align:left">匹配非数字，等同于：<code>[^\d]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:left">匹配所有空格字符，等同于： <code>[\t\n\f\r\p{Z}]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\S</td>
+<td style="text-align:left">匹配所有非空格字符，等同于： <code>[^\s]</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\f</td>
+<td style="text-align:left">匹配一个换页符</td>
+</tr>
+<tr>
+<td style="text-align:center">\n</td>
+<td style="text-align:left">匹配一个换行符</td>
+</tr>
+<tr>
+<td style="text-align:center">\r</td>
+<td style="text-align:left">匹配一个回车符</td>
+</tr>
+<tr>
+<td style="text-align:center">\t</td>
+<td style="text-align:left">匹配一个制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\v</td>
+<td style="text-align:left">匹配一个垂直制表符</td>
+</tr>
+<tr>
+<td style="text-align:center">\p</td>
+<td style="text-align:left">匹配 CR/LF（等同于 <code>\r\n</code>），用来匹配 DOS 行终止符</td>
+</tr>
+</tbody>
+</table>
+<p>\p{Z}：matches any kind of whitespace or invisible separator</p>
+<hr>
+<h2 id="0x04-先行断言和后发断言前后预查lookarounds">0x04 先行断言和后发断言（前后预查Lookarounds）</h2>
+<p>先行断言和后发断言都属于<strong>非捕获簇</strong>（<strong>不捕获文本</strong> ，也不针对组合计进行计数），仅作为约束。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">?=</td>
+<td style="text-align:center">正先行断言-存在</td>
+</tr>
+<tr>
+<td style="text-align:center">?!</td>
+<td style="text-align:center">负先行断言-排除</td>
+</tr>
+<tr>
+<td style="text-align:center">?&lt;=</td>
+<td style="text-align:center">正后发断言-存在</td>
+</tr>
+<tr>
+<td style="text-align:center">?&lt;!</td>
+<td style="text-align:center">负后发断言-排除</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0x04-1-正先行断言positive-lookahead">0x04-1 正先行断言(Positive Lookahead)</h3>
+<p><code>?=...</code>正先行断言，表示表达式的<strong>第一部分之后</strong>必须跟着正先行断言<code>?=...</code>定义的表达式。<br>
+即结果只包含满足匹配条件的表达式的<strong>第一部分</strong>。定义正先行断言时需要使用圆括号<code>()</code>。<br>
+如：<code>(T|t)he(?=\sq)</code> 匹配 <code>The</code> 或者 <code>the</code> 并且后面紧跟着 <code>（任意空白字符）q</code>：<br>
+<code>(T|t)he(?=\sq)</code> -&gt; <code>The</code> quick brown fox jumps over the lazy dog.</p>
+<h3 id="0x04-2-负先行断言negative-lookahead">0x04-2 负先行断言(Negative Lookahead)</h3>
+<p><code>?!...</code>负先行断言，表示表达式的第一部分之后<strong>不跟着</strong>负先行断言定义的表达式。<br>
+即结果仅包含第一部分，且不包含负先行断言定义的表达式。<br>
+如：<code>(T\t)he(?!\sq)</code> 匹配 <code>The</code> 或者 <code>the</code> 并且后面不跟着 <code>（任意空白字符）q</code>：<br>
+<code>(T|t)he(?!\sq)</code> -&gt; The quick brown fox jumps over <code>the</code> lazy dog.</p>
+<h3 id="0x04-3-正后发断言positive-lookbehind">0x04-3 正后发断言(Positive Lookbehind)</h3>
+<p><code>?&lt;=...</code>正后发断言，表示所匹配的结果之前必须跟着正后发断言定义的表达式。<br>
+如：<code>(?&lt;=\s)(f|d)o</code>  匹配 <code>fo</code> 或者 <code>do</code> 并且前面跟着 <code>任意空白字符</code>：<br>
+<code>(?&lt;=\s)(f|d)o</code>  -&gt; The quick brown <code>fo</code>x jumps over the lazy <code>do</code>g.</p>
+<h3 id="0x04-4-负后发断言negative-lookbehind">0x04-4 负后发断言(Negative Lookbehind)</h3>
+<p><code>?&lt;!...</code>负后发断言，表示所匹配的结果之前不跟着负后发断言定义的表达式。<br>
+如：<code>(?&lt;!(T|t)he\s)cat</code> 匹配 <code>cat</code> 并且前面不跟着 <code>The</code> 或者 <code>the</code>：<br>
+<code>(?&lt;!(T|t)he\s)cat</code>  -&gt; The cat sat on <code>cat</code>.</p>
+<hr>
+<h2 id="0x05-标志flags">0x05 标志(Flags)</h2>
+<p>标志也叫<strong>模式修饰符</strong>，因为它可以用来修改表达式的结果。这些标志可以以任何顺序或组合使用，是整个正则表达式的一部分。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标志</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:left">忽略大小写</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:left">全局搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">m</td>
+<td style="text-align:left">多行修饰符：锚点（<code>^</code>和<code>$</code>)在每行都起作用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="0x05-1-忽略大小写case-insensitive">0x05-1 忽略大小写(Case Insensitive)</h3>
+<p>修饰符<code>i</code>用于忽略大小写。<br>
+如：<code>/The/gi</code>表示在<strong>全局搜索</strong>搜索<code>The</code>，并且<strong>忽略</strong>表达式中的<strong>大小写</strong>。<br>
+<code>The</code> -&gt; <code>The</code> quick brown fox jumps over the lazy dog.<br>
+<code>/The/gi</code> -&gt; <code>The</code> quick brown fox jumps over <code>the</code> lazy dog.</p>
+<h3 id="0x05-2-全局搜索global-search">0x05-2 全局搜索(Global Search)</h3>
+<p>修饰符<code>g</code>用于在<strong>当前行</strong>执行<strong>全局</strong>搜索匹配。返回全局所有的匹配结果。<br>
+如：<code>/.(at)/g</code> 表示全局搜索任意字符（除了换行符）+<code>at</code>的所有匹配结果：<br>
+<code>/.(at)/</code> -&gt; The <code>fat</code> cat sat on the mat.<br>
+<code>/.(at)/g</code> -&gt; The <code>fat</code> <code>cat</code> <code>sat</code> on the <code>mat</code>.</p>
+<h3 id="0x05-3-多行修饰符multiline">0x05-3 多行修饰符(Multiline)</h3>
+<p>修饰符<code>m</code>用于在所有行执行搜索匹配。返回所有行匹配的结果。常用于在每行的开头或者结尾进行匹配。<br>
+如：<code>/.at(.)?$/gm</code> 表示 以除换行符外的任意字符开头，中间为<code>at</code>，以除换行符外的任意字符结尾，匹配每行的结尾部分。</p>
+<p><code>/.at(.)?$/</code> -&gt;<br>
+The fat<br>
+cat sat<br>
+on the <code>mat.</code></p>
+<p><code>/.at(.)?$/gm</code> -&gt;<br>
+The <code>fat</code><br>
+cat <code>sat</code><br>
+on the <code>mat.</code></p>
+<hr>
+<h2 id="0x06-贪婪匹配与惰性匹配greedy-vs-lazy-matching">0x06 贪婪匹配与惰性匹配(Greedy vs Lazy Matching)</h2>
+<p>正则表达式默认采用贪婪匹配模式。在该模式下意味着会匹配<strong>尽可能长</strong>的子串。<br>
+我们可以使用<code>?</code>将贪婪匹配模式转化为惰性匹配模式，会匹配<strong>尽可能短</strong>的子串。<br>
+如：<br>
+<code>/(.*at)/</code> -&gt; <code>The fat cat sat on the mat</code>.<br>
+<code>/(.*?at)/</code> -&gt; <code>The fat</code> cat sat on the mat.</p>
+<hr>
+<h2 id="todo">TODO</h2>
+<hr>
+</div>
+                                    <div class="mdui-divider mdui-m-b-2"></div>
+                                    <div class="mdui-row-xs-2 post-fenye">
+                                       
+                                        <div class="mdui-col"> </div>
+                                        
+
+                                        
+                                        <div class="mdui-col"><div class="mdui-text-right "><a href="https://owon3b.github.io/post/qwb2019/">QWB2019</a></div> </div>
+                                       
+                                      </div>
+                                   
+                                    <div class="mdui-divider mdui-m-t-2 mdui-m-b-2"></div>
+                                    
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '12fe1da5073630aeb3c6',
+    clientSecret: 'c0b469e796e677ff07d80920848debd748928098',
+    repo: 'owon3b.github.io',
+    owner: 'owon3b',
+    admin: ['owon3b'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+          
+        
+                                     <script src="https://owon3b.github.io//media/scripts/Valine.min.js"></script>
+ <div class="comment"></div>
+
+<script>
+      new Valine({
+            el: '.comment',
+
+
+
+            path: window.location.pathname,
+            pageSize: 30,
+            avatar:'mm', 
+       })
+    </script> 
+<script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+           if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
+              clearInterval(checkExist);
+           }
+        }, 100);
+    }
+</script>
+                                </article>
+
+                                    
+                        </div>
+                      </div>
+    
+                
+
+              </div>
+                    <footer class="footer mdui-m-t-5 mdui-text-center">
+               <nav class="social-links">
+                      <ul>
+                      
+                      
+                           
+                      
+                           
+                      	
+                        <li class="social-link"><a href="https://github.com/owon3b" target="_blank"><i class="iconfont icon-github"></i></a></li>
+                          
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      
+                           
+                      </ul>
+                    </nav>
+                    <div class="copyright">
+                      <p>Powered by <a href="https://github.com/getgridea/gridea">Gridea</a> <br/> Theme <a href="https://github.com/shanbufun/gridea-theme-song" target="_blank"  title="宋"  >Song</a> by <a href="https://shanbu.fun/" target="_blank"  title="山卜方" >shanbufun</a> </p>
+                  </div>
+                  
+              </footer>
+    </body>
+</html>

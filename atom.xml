@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://owon3b.github.io/</id>
     <title>owon3b</title>
-    <updated>2020-02-07T08:02:31.726Z</updated>
+    <updated>2020-07-07T15:28:27.460Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://owon3b.github.io/"/>
     <link rel="self" href="https://owon3b.github.io/atom.xml"/>
@@ -12,9 +12,30 @@
     <icon>https://owon3b.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, owon3b</rights>
     <entry>
+        <title type="html"><![CDATA[Learn Regex(Regular Expression)]]></title>
+        <id>https://owon3b.github.io/post/learn-regexregular-expression/</id>
+        <link href="https://owon3b.github.io/post/learn-regexregular-expression/">
+        </link>
+        <updated>2020-02-06T05:52:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>owon3b的正则表达式学习记录。</p>
+<blockquote>
+<p>Regex(正则表达式)：使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。<br>
+Material: <a href="https://github.com/ziishaned/learn-regex">https://github.com/ziishaned/learn-regex</a><br>
+Practice: <a href="https://regex101.com/">https://regex101.com/</a></p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<p>owon3b的正则表达式学习记录。</p>
+<blockquote>
+<p>Regex(正则表达式)：使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。<br>
+Material: <a href="https://github.com/ziishaned/learn-regex">https://github.com/ziishaned/learn-regex</a><br>
+Practice: <a href="https://regex101.com/">https://regex101.com/</a></p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[QWB2019]]></title>
-        <id>https://owon3b.github.io/post/qwb2019</id>
-        <link href="https://owon3b.github.io/post/qwb2019">
+        <id>https://owon3b.github.io/post/qwb2019/</id>
+        <link href="https://owon3b.github.io/post/qwb2019/">
         </link>
         <updated>2019-08-09T10:32:37.000Z</updated>
         <summary type="html"><![CDATA[<p>全国强网杯部分逆向题目writeup，包括JustRe、webassembly、设备固件。</p>
@@ -24,8 +45,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[TCTF Elements]]></title>
-        <id>https://owon3b.github.io/post/tctf-elements</id>
-        <link href="https://owon3b.github.io/post/tctf-elements">
+        <id>https://owon3b.github.io/post/tctf-elements/</id>
+        <link href="https://owon3b.github.io/post/tctf-elements/">
         </link>
         <updated>2019-07-27T13:19:23.000Z</updated>
         <summary type="html"><![CDATA[<p>TCTF的一道逆向题目Elements：</p>
@@ -35,8 +56,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello World!]]></title>
-        <id>https://owon3b.github.io/post/hello-world</id>
-        <link href="https://owon3b.github.io/post/hello-world">
+        <id>https://owon3b.github.io/post/hello-world/</id>
+        <link href="https://owon3b.github.io/post/hello-world/">
         </link>
         <updated>2019-07-25T13:48:40.000Z</updated>
         <summary type="html"><![CDATA[<p>Hello World!</p>
